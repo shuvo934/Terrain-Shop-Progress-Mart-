@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark_yellow"
+    android:weightSum="1"
+    tools:context=".firstpage.ChoicePage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".4"
+        android:weightSum="10"
+        android:orientation="vertical"
+        android:background="@drawable/design2">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:layout_margin="10dp"
+            android:src="@drawable/terrain_shop_icon"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:id="@+id/apps_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_gravity="top"
+            android:fontFamily="@font/bungee"
+            android:gravity="top|center"
+            android:text="@string/app_name"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/primary_variant_second"
+            android:textSize="@dimen/_23sdp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".6"
+        android:layout_marginTop="5dp"
+        app:cardElevation="3dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.MaterialCardView.Cut">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/welcome_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/patua_one"
+                    android:gravity="start"
+                    android:text="Welcome"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/extra_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/welcome_text"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/patua_one"
+                    android:text="@string/description"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:layout_below="@+id/extra_text"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="40dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/go_to_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_button"
+                        android:text="Login"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/russo_one"
+                        app:backgroundTint="@null"/>
+                    <TextView
+                        android:id="@+id/or_text_extra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Or"
+                        android:textStyle="bold"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/roboto_medium"/>
+                    <Button
+                        android:id="@+id/go_to_homepage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/custom_button"
+                        android:text="Go to Mart"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginEnd="40dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/_12sdp"
+                        android:fontFamily="@font/russo_one"
+                        app:backgroundTint="@null"/>
+
+                </LinearLayout>
+
+
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+</LinearLayout>

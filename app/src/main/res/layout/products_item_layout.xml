@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_of_type_of_item_products"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/new_image"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"/>
+
+            <ImageView
+                android:id="@+id/products_item_image"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/hero_1"/>
+
+            <TextView
+                android:id="@+id/products_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOTTE WHITE COOKIE PEPERO-32 GM"
+                android:gravity="top|center"
+                android:padding="5dp"
+                android:layout_below="@+id/products_item_image"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/patua_one"/>
+
+            <TextView
+                android:id="@+id/products_item_packaging_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 pcs ( 1 pcs )"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/products_item_name"
+                android:layout_gravity="center"
+                android:textSize="10sp"
+                android:fontFamily="@font/patua_one"/>
+
+            <LinearLayout
+                android:id="@+id/products_item_price_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/products_item_packaging_qty"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="8dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/products_item_card_rate_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳ 100"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_variant_second"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/patua_one"/>
+
+                <TextView
+                    android:id="@+id/products_item_real_rate_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳ 100"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/patua_one"/>
+
+
+            </LinearLayout>
+
+<!--            <TextView-->
+<!--                android:id="@+id/products_item_price"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:text="৳ 100  |  1 pcs"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:textStyle="bold"-->
+<!--                android:layout_above="@+id/products_item_add_to_cart_button"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginEnd="5dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:textSize="10sp"-->
+<!--                android:fontFamily="@font/patua_one"/>-->
+
+            <Button
+                android:id="@+id/products_item_add_to_cart_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Add to Cart"
+                android:background="@drawable/custom_button"
+                android:textAppearance="@style/ButtonDesign"
+                android:layout_marginBottom="15dp"
+                android:layout_below="@+id/products_item_price_layout"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                app:backgroundTint="@null"/>
+
+
+
+            <ImageView
+                android:id="@+id/out_stock_image_products"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/out_stock"
+                android:layout_marginEnd="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/out_of_stock_lay_products"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:visibility="gone"
+            android:alpha=".3"
+            android:orientation="horizontal" />
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

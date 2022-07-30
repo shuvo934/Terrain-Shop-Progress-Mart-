@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    tools:context=".homepage.fragments.NewArrivalItem">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/new_arrival_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <TextView
+        android:id="@+id/no_product_msg_new_arrival"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Products Found"
+        android:gravity="center"
+        android:textColor="@color/primary_variant_second"
+        android:textStyle="bold"
+        android:fontFamily="@font/patua_one"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_new_arrival_item_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:layout_gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/refresh_button_for_new_arrival_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/refresh_24"
+        android:visibility="gone"
+        android:background="@drawable/custom_button"
+        android:layout_gravity="center_horizontal|center_vertical"
+        app:backgroundTint = "@color/back_color"/>
+
+</FrameLayout>

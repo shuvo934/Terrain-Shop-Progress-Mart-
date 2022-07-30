@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/user_profile_group"
+        android:checkableBehavior="none">
+
+        <item android:id="@+id/user_profile"
+            android:title="Profile"/>
+        <item android:id="@+id/my_orders"
+            android:title="My Orders"/>
+        <item android:id="@+id/my_favorites"
+            android:title="My Favorites"/>
+        <item android:id="@+id/my_vouchers"
+            android:title="Vouchers"/>
+        <item
+            android:id="@+id/nav_logOut"
+            android:title="Log out" />
+        <item
+            android:id="@+id/nav_logIn"
+            android:title="LOGIN" />
+    </group>
+
+    <group
+        android:id="@+id/categories_id_off_all"
+        android:checkableBehavior="none">
+        <item android:title="@string/group_name"
+            android:id="@+id/all_categories">
+            <menu>
+            </menu>
+        </item>
+    </group>
+<!--    <group-->
+<!--        android:id="@+id/inventory_group"-->
+<!--        android:checkableBehavior="none">-->
+<!--        <item android:title="Categories"-->
+<!--            >-->
+<!--            <menu>-->
+<!--                <group android:id="@+id/all_categories"-->
+<!--                    android:checkableBehavior="none">-->
+
+<!--&lt;!&ndash;                    <item android:title="Purchase Requisition Approval"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/purchase_req_approval"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <item android:title="Purchase Order Approval"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/purchase_order_approval"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <item android:title="Work Order/Purchase Order"&ndash;&gt;-->
+<!--&lt;!&ndash;                        android:id="@+id/work_order"/>&ndash;&gt;-->
+<!--                </group>-->
+
+
+<!--            </menu>-->
+<!--        </item>-->
+<!--    </group>-->
+
+
+
+</menu>

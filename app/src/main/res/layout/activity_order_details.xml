@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".myorders.orderDetails.OrderDetails">
+
+    <RelativeLayout
+        android:id="@+id/order_details_full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:id="@+id/my_orders_details_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/back_logo_check_my_orders_details"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_back_24"
+                app:tint="@color/primary_variant_second" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/back_logo_check_my_orders_details"
+                android:fontFamily="@font/patua_one"
+                android:text="ORDER DETAILS"
+                android:textColor="@color/primary_variant_second"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_above="@+id/order_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_yellow"
+            android:orientation="vertical"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/order_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_margin="8dp"
+            android:layout_below="@id/my_orders_details_action_bar"
+            android:layout_alignParentEnd="true"
+            app:cardElevation="3dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/header_design"/>
+                <TextView
+                    android:id="@+id/order_no_order_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ORDER NO: \nPROGRESS/22/0000000"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="20dp"
+
+                    android:fontFamily="@font/russo_one"
+                    android:layout_marginTop="10dp"
+                    />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:id="@+id/order_details_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/order_details_layout"
+            android:layout_alignParentStart="true"
+            android:layout_margin="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="#f6e58d"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <TextView
+                        android:id="@+id/order_tracking_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ORDER CONFIRMED"
+                        android:textColor="@color/primary_variant_second"
+                        android:textSize="22sp"
+                        android:padding="12dp"
+                        android:fontFamily="@font/patua_one"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order Details"
+                    android:textColor="@color/dark_yellow"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/patua_one"
+                    android:layout_margin="10dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="center"
+                        android:text="Address: "
+                        android:textColor="@color/primary_variant_second"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/patua_one"/>
+                    <TextView
+                        android:id="@+id/delivery_address_order_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:text="SENPARA, MIRPUR"
+                        android:gravity="end"
+                        android:textStyle=""
+                        android:fontFamily="@font/patua_one"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:text="Order Date: "
+                        android:textColor="@color/primary_variant_second"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/patua_one"/>
+                    <TextView
+                        android:id="@+id/order_date_order_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:text="SENPARA, MIRPUR"
+                        android:gravity="end"
+                        android:textStyle=""
+                        android:fontFamily="@font/patua_one"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:text="Delivery Date: "
+                        android:textColor="@color/primary_variant_second"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/patua_one"/>
+                    <TextView
+                        android:id="@+id/delivery_date_order_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:text="SENPARA, MIRPUR"
+                        android:gravity="end"
+                        android:textStyle=""
+                        android:fontFamily="@font/patua_one"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:text="Delivery Time: "
+                        android:textColor="@color/primary_variant_second"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/patua_one"/>
+                    <TextView
+                        android:id="@+id/delivery_time_order_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="5"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:text="SENPARA, MIRPUR"
+                        android:gravity="end"
+                        android:textStyle=""
+                        android:fontFamily="@font/patua_one"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Order Summary"
+                    android:textColor="@color/dark_yellow"
+                    android:textSize="17sp"
+                    android:fontFamily="@font/patua_one"
+                    android:layout_margin="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/order_summary_list_view_order_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:descendantFocusability="beforeDescendants"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="SubTotal"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/patua_one"/>
+                    <TextView
+                        android:id="@+id/subtotal_of_order_summary_order_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:textColor="@color/primary_variant_second"
+                        android:text="৳ 1000"
+                        android:gravity="center|end"
+                        android:fontFamily="@font/patua_one"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="10dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:layout_marginEnd="10dp"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Delivery Fee"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/patua_one"/>
+                    <TextView
+                        android:id="@+id/delivery_fee_total_order_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:textColor="@color/primary_variant_second"
+                        android:text="৳ 0"
+                        android:gravity="center|end"
+                        android:fontFamily="@font/patua_one"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:layout_marginEnd="10dp"
+                    android:weightSum="10">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:text="Total"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:textSize="17sp"
+                        android:layout_marginEnd="5dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_yellow"
+                        android:fontFamily="@font/patua_one"/>
+                    <TextView
+                        android:id="@+id/total_price_of_order_order_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:textStyle="bold"
+                        android:textSize="17sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:textColor="@color/primary_variant_second"
+                        android:text="৳ 0"
+                        android:gravity="center|end"
+                        android:fontFamily="@font/patua_one"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_orders_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:orientation="vertical"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/spinner_layout_division_checkout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="1dp"
+                    app:boxStrokeColor="@color/primary_variant_second"
+                    app:boxStrokeWidth="1dp"
+                    app:hintTextColor="#b2bec3"
+                    android:textColorHint = "#b2bec3"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxBackgroundColor="@color/white"
+                    app:boxBackgroundMode="filled"
+                    app:endIconMode="dropdown_menu"
+                    android:hint="@string/div"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    >
+
+                    <com.rosemaryapp.amazingspinner.AmazingSpinner
+                        android:id="@+id/division_spinner_checkout"
+                        style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                        android:layout_width="match_parent"
+                        android:text=""
+                        android:layout_height="wrap_content"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="2.5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_weight=".5"-->
+<!--            app:cardCornerRadius="10dp"-->
+<!--            app:cardElevation="2dp"-->
+<!--            app:cardBackgroundColor="@color/white">-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/darker_gray">-->
+<!--                <com.google.android.material.textfield.TextInputLayout-->
+<!--                    android:id="@+id/spinner_layout_district_checkout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="1dp"-->
+<!--                    app:boxStrokeColor="@color/primary_variant_second"-->
+<!--                    app:boxStrokeWidth="1dp"-->
+<!--                    app:hintTextColor="#b2bec3"-->
+<!--                    android:textColorHint = "#b2bec3"-->
+<!--                    app:boxCornerRadiusTopStart="10dp"-->
+<!--                    app:boxCornerRadiusTopEnd="10dp"-->
+<!--                    app:boxCornerRadiusBottomEnd="10dp"-->
+<!--                    app:boxCornerRadiusBottomStart="10dp"-->
+<!--                    app:boxBackgroundColor="@color/white"-->
+<!--                    app:boxBackgroundMode="filled"-->
+<!--                    app:endIconMode="dropdown_menu"-->
+<!--                    android:hint="@string/dist"-->
+<!--                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"-->
+<!--                    >-->
+
+<!--                    <com.rosemaryapp.amazingspinner.AmazingSpinner-->
+<!--                        android:id="@+id/district_spinner_checkout"-->
+<!--                        style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:text=""-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        />-->
+<!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+    </LinearLayout>
+
+<!--                    <androidx.cardview.widget.CardView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="10dp"-->
+<!--                        android:layout_marginEnd="10dp"-->
+<!--                        android:layout_marginTop="15dp"-->
+<!--                        app:cardCornerRadius="10dp"-->
+<!--                        app:cardElevation="2dp"-->
+<!--                        app:cardBackgroundColor="@color/white">-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:background="@android:color/darker_gray">-->
+<!--                            <com.google.android.material.textfield.TextInputLayout-->
+<!--                                android:id="@+id/spinner_layout_district_checkout"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_margin="1dp"-->
+<!--                                app:boxStrokeColor="@color/primary_variant_second"-->
+<!--                                app:boxStrokeWidth="1dp"-->
+<!--                                app:hintTextColor="#b2bec3"-->
+<!--                                android:textColorHint = "#b2bec3"-->
+<!--                                app:boxCornerRadiusTopStart="10dp"-->
+<!--                                app:boxCornerRadiusTopEnd="10dp"-->
+<!--                                app:boxCornerRadiusBottomEnd="10dp"-->
+<!--                                app:boxCornerRadiusBottomStart="10dp"-->
+<!--                                app:boxBackgroundColor="@color/white"-->
+<!--                                app:boxBackgroundMode="filled"-->
+<!--                                app:endIconMode="dropdown_menu"-->
+<!--                                android:hint="@string/dist"-->
+<!--                                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"-->
+<!--                                >-->
+
+<!--                                <com.rosemaryapp.amazingspinner.AmazingSpinner-->
+<!--                                    android:id="@+id/district_spinner_checkout"-->
+<!--                                    style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:text=""-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    />-->
+<!--                            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </androidx.cardview.widget.CardView>-->
+
+    <TextView
+        android:id="@+id/no_district_msg_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please select above field"
+        android:visibility="gone"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="30dp"
+        android:textSize="12sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="5dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/spinner_layout_thana_checkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                app:boxStrokeColor="@color/primary_variant_second"
+                app:boxStrokeWidth="1dp"
+                app:hintTextColor="#b2bec3"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                android:textColorHint = "#b2bec3"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="filled"
+                app:endIconMode="dropdown_menu"
+                android:hint="@string/loc"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                >
+
+                <com.rosemaryapp.amazingspinner.AmazingSpinner
+                    android:id="@+id/thana_spinner_checkout"
+                    style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                    android:layout_width="match_parent"
+                    android:text=""
+                    android:layout_height="wrap_content"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/no_upazila_msg_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Select Location"
+        android:visibility="gone"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="30dp"
+        android:textSize="12sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="5dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/delivery_address_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/checkout_delivery_address_hint"
+        app:boxStrokeColor="@color/primary_variant_second"
+        app:boxStrokeWidth="1dp"
+        app:hintTextColor="#b2bec3"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        android:textColorHint = "#b2bec3"
+        app:helperTextEnabled="true"
+        app:helperText=""
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/delivery_address_given_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text=""
+            android:textColor="@color/black"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/radio_button_for_delivery_address_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Same as User Address"
+        android:textColor="@color/status_bar_color"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="12sp"
+        android:checked="false"
+        app:buttonTint="@color/primary_second"
+        android:fontFamily="@font/roboto_bold"
+        style="@style/Widget.Material3.CompoundButton.CheckBox"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/billing_address_checkout"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:hint="@string/chekout_billing_address_hint"
+        app:boxStrokeColor="@color/primary_variant_second"
+        app:boxStrokeWidth="1dp"
+        android:layout_marginTop="5dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:hintTextColor="#b2bec3"
+        android:textColorHint = "#b2bec3"
+        app:helperTextEnabled="true"
+        app:helperText=""
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/billing_address_given_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text=""
+            android:textColor="@color/black"
+            android:inputType="textMultiLine"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/radio_button_for_billing_address_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Same as User Address"
+        android:textColor="@color/status_bar_color"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="12sp"
+        android:checked="false"
+        app:buttonTint="@color/primary_second"
+        android:fontFamily="@font/roboto_bold"
+        style="@style/Widget.Material3.CompoundButton.CheckBox"/>
+
+</LinearLayout>

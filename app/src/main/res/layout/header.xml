@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    android:layout_height="200dp"-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_150sdp"
+    android:orientation="vertical"
+    android:background="@drawable/header_design"
+    android:gravity="bottom"
+    android:padding="20dp">
+
+
+    <TextView
+        android:id="@+id/user_image_in_header"
+        android:layout_width="@dimen/_55sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:textSize="@dimen/_25sdp"
+        android:fontFamily="@font/patua_one"
+        android:textColor="@color/primary_variant_second"
+        android:background="@drawable/account_circle_24"
+        android:gravity="center"
+        android:backgroundTint="@color/white"/>
+
+    <TextView
+        android:id="@+id/user_name_in_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shahed Ahmed Dewan Sagar"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_17sdp"
+        android:textStyle="bold"
+        android:fontFamily="@font/russo_one"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/user_mail_after_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ahasan.shuvo86@gmail.com"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+
+
+
+
+
+</LinearLayout>

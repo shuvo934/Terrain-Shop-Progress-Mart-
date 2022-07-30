@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".profile.UpdateLocation">
+
+    <RelativeLayout
+        android:id="@+id/update_location_full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:id="@+id/update_location_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/close_logo_update_location"
+                android:layout_centerVertical="true"
+                android:src="@drawable/close_24"
+                app:tint="@color/primary_variant_second" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/close_logo_update_location"
+                android:fontFamily="@font/patua_one"
+                android:text="UPDATE LOCATION"
+                android:textColor="@color/primary_variant_second"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/update_location_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_yellow"
+            android:orientation="vertical"/>
+
+        <LinearLayout
+            android:id="@+id/update_layout_update_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/update_location_action_bar"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        app:hintTextColor="#b2bec3"
+                        android:textColorHint="#b2bec3"
+                        app:boxCornerRadiusTopStart="3dp"
+                        app:boxCornerRadiusTopEnd="3dp"
+                        app:boxCornerRadiusBottomEnd="3dp"
+                        app:boxCornerRadiusBottomStart="3dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="filled"
+                        app:endIconMode="dropdown_menu"
+                        app:boxStrokeWidth="0dp"
+                        app:helperTextEnabled="true"
+                        app:helperText=""
+                        app:helperTextTextColor="@android:color/holo_red_dark"
+                        android:hint= "@string/div"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        >
+
+                        <com.rosemaryapp.amazingspinner.AmazingSpinner
+                            android:id="@+id/division_spinner_update_location"
+                            style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                            android:layout_width="match_parent"
+                            android:text=""
+                            android:layout_height="wrap_content"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/spinner_layout_division_update_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please Select Division"
+                android:visibility="gone"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/darker_gray">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/spinner_layout_location_update_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        app:hintTextColor="#b2bec3"
+                        android:textColorHint = "#b2bec3"
+                        app:boxCornerRadiusTopStart="3dp"
+                        app:boxCornerRadiusTopEnd="3dp"
+                        app:boxCornerRadiusBottomEnd="3dp"
+                        app:boxCornerRadiusBottomStart="3dp"
+                        app:boxBackgroundColor="@color/white"
+                        app:boxBackgroundMode="filled"
+                        app:endIconMode="dropdown_menu"
+                        app:boxStrokeWidth="0dp"
+                        app:helperTextEnabled="true"
+                        app:helperText=""
+                        app:helperTextTextColor="@android:color/holo_red_dark"
+                        android:hint= "@string/loc"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                        >
+
+                        <com.rosemaryapp.amazingspinner.AmazingSpinner
+                            android:id="@+id/location_spinner_update_location"
+                            style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                            android:layout_width="match_parent"
+                            android:text=""
+                            android:layout_height="wrap_content"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/no_location_update_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please Select Location"
+                android:visibility="gone"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="@dimen/_8sdp"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button_update_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:text="UPDATE"
+            android:background="@drawable/custom_button"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/patua_one"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/update_layout_update_location"
+            app:backgroundTint="@color/dark_yellow"
+            android:enabled="true"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_update_location"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

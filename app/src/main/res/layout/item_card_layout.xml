@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:cardCornerRadius="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="10dp">
+        <RelativeLayout
+            android:layout_width="170dp"
+            android:layout_height="270dp">
+
+
+            <ImageView
+                android:id="@+id/image_of_type_of_item"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/new_image"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"/>
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/hero_1"/>
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="TIFFANY CRUNCH &amp; CREAM WEAFER-STRAWBERRY-76 GM"
+                android:gravity="top|center"
+                android:layout_below="@+id/item_image"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:layout_above="@+id/item_packaging_qty"
+                android:layout_margin="5dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/patua_one"/>
+
+            <TextView
+                android:id="@+id/item_packaging_qty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 pcs ( 1 pcs )"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/item_price_layout"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:textSize="10sp"
+                android:fontFamily="@font/patua_one"/>
+
+            <LinearLayout
+                android:id="@+id/item_price_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/item_add_to_cart_button"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="8dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_card_rate_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳ 100"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_variant_second"
+                    android:textSize="11sp"
+                    android:fontFamily="@font/patua_one"/>
+
+                <TextView
+                    android:id="@+id/item_real_rate_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="৳ 100"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:textSize="10sp"
+                    android:fontFamily="@font/patua_one"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/item_add_to_cart_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Add to Cart"
+                android:background="@drawable/custom_button"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:textAppearance="@style/ButtonDesign"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                app:backgroundTint="@null"/>
+
+            <LinearLayout
+                android:id="@+id/out_of_stock_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:visibility="gone"
+                android:alpha=".3"
+                android:orientation="horizontal" />
+            <ImageView
+                android:id="@+id/out_stock_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/out_stock"
+                android:layout_marginEnd="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/view_all_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/view_all_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View all"
+            android:gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/dark_yellow"
+            android:textStyle="bold"
+            android:fontFamily="@font/patua_one"/>
+        <ImageButton
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/view_all_text"
+            android:src="@drawable/navigate_next_24"
+            android:background="@drawable/circle_shape"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

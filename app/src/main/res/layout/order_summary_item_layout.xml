@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="4dp"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/order_summary_item_name_with_qty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2  x  KITKAT KHAO MOJA PAO"
+            android:textStyle="normal"
+            android:layout_gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/dark_yellow"
+            android:fontFamily="@font/roboto_bold"/>
+        <TextView
+            android:id="@+id/order_summary_item_unit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1 pcs ( 1 pcs )"
+            android:layout_marginTop="3dp"
+            android:textStyle="normal"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:fontFamily="@font/roboto_medium"/>
+
+        <TextView
+            android:id="@+id/order_summary_item_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price: 15"
+            android:layout_marginTop="3dp"
+            android:textStyle="normal"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/roboto_medium"/>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/order_summary_item_total_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="2000"
+        android:textStyle="bold"
+        android:gravity="center|end"
+        android:layout_gravity="center"
+        android:textSize="15sp"
+        android:fontFamily="@font/patua_one"/>
+
+
+
+
+
+</LinearLayout>

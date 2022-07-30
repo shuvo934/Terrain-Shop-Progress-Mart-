@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".subcategory.SubCategory">
+
+    <RelativeLayout
+        android:id="@+id/sub_category_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/design2"
+        android:padding="16dp">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/back_logo_sub_category"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_24"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/categories_name_in_sub_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/back_logo_sub_category"
+            android:layout_toStartOf="@+id/cart_layout_in_subcategory"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/patua_one"
+            android:text="CATEGORIES NAME"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:id="@+id/cart_layout_in_subcategory"
+            style="?attr/actionButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/shopping_cart_24"/>
+
+            <TextView
+                android:id="@+id/cart_badge_in_sub_category"
+                android:layout_width="20dp"
+                android:visibility="gone"
+                android:layout_height="20dp"
+                android:layout_gravity="right|end|top"
+                android:layout_marginEnd="-5dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/badge_background"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@android:color/white"
+                android:text="0"
+                android:textSize="10sp"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sub_category_action_bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sub_category_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:descendantFocusability="beforeDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+
+            />
+    </RelativeLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_sub_category"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"/>
+
+
+</RelativeLayout>

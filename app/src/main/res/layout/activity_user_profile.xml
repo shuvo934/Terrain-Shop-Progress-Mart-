@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".profile.UserProfile">
+
+    <RelativeLayout
+        android:id="@+id/user_profile_full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:id="@+id/user_profile_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/back_logo_user_profile"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_back_24"
+                app:tint="@color/primary_variant_second" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/back_logo_user_profile"
+                android:fontFamily="@font/patua_one"
+                android:text="PROFILE"
+                android:textColor="@color/primary_variant_second"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_above="@+id/user_profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_yellow"
+            android:orientation="vertical"/>
+
+        <ScrollView
+            android:id="@+id/user_profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:layout_below="@id/user_profile_action_bar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/user_profile_name_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="@color/primary_variant_second"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/russo_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            />
+                        <TextView
+                            android:id="@+id/user_profile_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ahasan Ul Haque Shuvo"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/patua_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_toStartOf="@+id/edit_image_name"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/user_profile_name_text"
+                            />
+
+                        <ImageView
+                            android:id="@+id/edit_image_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/edit_24"
+                            android:layout_marginEnd="10dp"
+                            android:tint="@color/dark_yellow"/>
+
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/user_profile_location_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location"
+                            android:textColor="@color/primary_variant_second"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/russo_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            />
+                        <TextView
+                            android:id="@+id/user_profile_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_toStartOf="@+id/edit_image_location"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/patua_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/user_profile_location_text"
+                            />
+
+                        <ImageView
+                            android:id="@+id/edit_image_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/edit_24"
+                            android:layout_marginEnd="10dp"
+                            android:tint="@color/dark_yellow"/>
+
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/user_profile_address_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address"
+                            android:textColor="@color/primary_variant_second"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/russo_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            />
+                        <TextView
+                            android:id="@+id/user_profile_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_toStartOf="@+id/edit_image_address"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/patua_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/user_profile_address_text"
+                            />
+
+                        <ImageView
+                            android:id="@+id/edit_image_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/edit_24"
+                            android:layout_marginEnd="10dp"
+                            android:tint="@color/dark_yellow"/>
+
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/user_profile_mail_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textColor="@color/primary_variant_second"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/russo_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            />
+                        <TextView
+                            android:id="@+id/user_profile_mail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_toStartOf="@+id/edit_image_mail"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/patua_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/user_profile_mail_text"
+                            />
+
+                        <ImageView
+                            android:id="@+id/edit_image_mail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/edit_24"
+                            android:layout_marginEnd="10dp"
+                            android:tint="@color/dark_yellow"/>
+
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="8dp"
+                    app:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:id="@+id/user_profile_mobile_number_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Number"
+                            android:textColor="@color/primary_variant_second"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/russo_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            />
+                        <TextView
+                            android:id="@+id/user_profile_mobile_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo Ahasan Ul Haque Shuvo"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:layout_toStartOf="@+id/edit_image_mobile_number"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/patua_one"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/user_profile_mobile_number_text"
+                            />
+
+                        <ImageView
+                            android:id="@+id/edit_image_mobile_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/edit_24"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp"
+                            android:tint="@color/dark_yellow"/>
+
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_profile_save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="SAVE"
+            android:background="@drawable/custom_button"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/patua_one"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:backgroundTint="@color/dark_yellow"
+            android:enabled="true"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_user_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+
+</RelativeLayout>

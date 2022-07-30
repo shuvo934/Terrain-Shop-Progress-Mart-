@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Progress Mart</string>
+    <string name="quote">Buy Better, Live Better</string>
+    <string name="version_control">Version 9.0</string>
+    <string name="description">This is our biggest online mart in bangladesh. We offer broad range of authentic products which will satisfy your needs.
+    So feel free to visit our mart first or get login first to check your offer.</string>
+    <string name="sign_up_name_hint">Full Name <font color='red'>*</font></string>
+    <string name="sign_up_address_hint">Address <font color='red'>*</font></string>
+    <string name="checkout_delivery_address_hint">Delivery Address <font color='red'>*</font></string>
+    <string name="chekout_billing_address_hint">Billing Address <font color='red'>*</font></string>
+    <string name="chekout_delivery_date_hint">Date <font color='red'>*</font></string>
+    <string name="sign_up_mobile_hint">Mobile Number <font color='red'>*</font></string>
+    <string name="sign_up_mail_hint">Email <font color='red'>*</font></string>
+    <string name="sign_up_pass_hint">Password <font color='red'>*</font></string>
+    <string name="div">Division <font color='red'>*</font></string>
+    <string name="dist">District <font color='red'>*</font></string>
+    <string name="loc">Location <font color='red'>*</font></string>
+    <string name="time_slot">Expected Delivery Time <font color='red'>*</font></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="group_name">
+        <b><font color='#e1b12c' face='verdana'>CATEGORIES</font></b>
+    </string>
+    <string name="forgot_text">Please enter the email address which is associated with your account where your account information will be sent to</string>
+    <string name="terms_condition">By completing this order, I agree to all <font color='#e1b12c'>terms &amp; conditions.</font></string>
+    <string name="test_about">A product is the item offered for sale. A product can be a service or an item. It can be physical or in virtual or cyber form. Every product is made at a cost and each is sold at a price. The price that can be charged depends on the market, the quality, the marketing and the segment that is targeted. Each product has a useful life after which it needs replacement, and a life cycle after which it has to be re-invented. In FMCG parlance, a brand can be revamped, re-launched or extended to make it more relevant to the segment and times, often keeping the product almost the same</string>
+</resources>

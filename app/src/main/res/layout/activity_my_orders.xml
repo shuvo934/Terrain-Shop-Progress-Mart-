@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".myorders.MyOrders">
+
+    <RelativeLayout
+        android:id="@+id/my_orders_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:padding="16dp">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/back_logo_check_my_orders"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_24"
+            app:tint="@color/primary_variant_second" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/back_logo_check_my_orders"
+            android:fontFamily="@font/patua_one"
+            android:text="MY ORDERS"
+            android:textColor="@color/primary_variant_second"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_above="@+id/order_history_layout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dark_yellow"
+        android:orientation="vertical"/>
+
+
+    <RelativeLayout
+        android:id="@+id/order_history_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/my_orders_action_bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/my_order_history_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:descendantFocusability="beforeDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/no_order_msg_my_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Orders Yet"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/my_orders_action_bar"
+        android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:visibility="gone"
+        android:textColor="@color/primary_variant_second"
+        android:textStyle="bold"
+        android:fontFamily="@font/patua_one"/>
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_my_orders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
