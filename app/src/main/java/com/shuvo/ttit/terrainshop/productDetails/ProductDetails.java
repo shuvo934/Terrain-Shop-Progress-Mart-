@@ -264,6 +264,37 @@ public class ProductDetails extends AppCompatActivity {
         }
 
         itemCount.setText("1");
+
+        int o = 0;
+        for (int i = 0; i < myCartList.size(); i++) {
+            if (item_id.equals(myCartList.get(i).getIem_item_id())) {
+                String qty = myCartList.get(i).getItem_qty();
+                int qq = Integer.parseInt(qty);
+                if (stockQty == null) {
+                    stockQty = "0";
+                    if (stockQty.isEmpty()) {
+                        stockQty = "0";
+                    }
+                }
+                int stq = Integer.parseInt(stockQty);
+                if (stq > qq) {
+                    addButton.setBackgroundColor(Color.parseColor("#e1b12c"));
+                    qq = qq + 1;
+                    if (stq <= qq) {
+                        addButton.setBackgroundColor(Color.parseColor("#b2bec3"));
+                    }
+                }
+                else {
+                    addButton.setBackgroundColor(Color.parseColor("#b2bec3"));
+                }
+                o = 1;
+            }
+        }
+
+        if(o == 0) {
+            addButton.setBackgroundColor(Color.parseColor("#e1b12c"));
+        }
+
         if (itemCount.getText().equals("1")) {
             removeButton.setBackgroundColor(Color.parseColor("#b2bec3"));
         }
@@ -277,11 +308,72 @@ public class ProductDetails extends AppCompatActivity {
 
                 String text = itemCount.getText().toString();
                 int num = Integer.parseInt(text);
-                int add = num + 1;
-                itemCount.setText(String.valueOf(add));
-                if (add > 1) {
-                    removeButton.setBackgroundColor(Color.parseColor("#e1b12c"));
+
+                int a = 0;
+                if (stockQty == null) {
+                    stockQty = "0";
+                    if (stockQty.isEmpty()) {
+                        stockQty = "0";
+                    }
                 }
+                for (int i = 0 ; i < myCartList.size(); i++) {
+                    if (item_id.equals(myCartList.get(i).getIem_item_id())) {
+                        String qty = myCartList.get(i).getItem_qty();
+                        int qq = Integer.parseInt(qty);
+
+                        int stq = Integer.parseInt(stockQty);
+                        System.out.println(stq);
+                        System.out.println(qq);
+                        if (stq > qq) {
+                            int newQQ = Integer.parseInt(itemCount.getText().toString());
+                            System.out.println("P1");
+                            qq = qq + newQQ;
+                            if (stq > qq) {
+                                System.out.println("P1");
+                                int add = num + 1;
+                                itemCount.setText(String.valueOf(add));
+                                if (add > 1) {
+                                    removeButton.setBackgroundColor(Color.parseColor("#e1b12c"));
+                                }
+                                qq = qq + 1;
+                                if (stq <= qq) {
+                                    addButton.setBackgroundColor(Color.parseColor("#b2bec3"));
+                                }
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(),"Sorry, stock limit reached",Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"Sorry, stock limit reached",Toast.LENGTH_SHORT).show();
+                        }
+                        a = 1;
+                    }
+                }
+
+                if (a == 0) {
+                    int stq = Integer.parseInt(stockQty);
+                    String i_qty = itemCount.getText().toString();
+                    int qq = Integer.parseInt(i_qty);
+                    if (stq > qq) {
+                        System.out.println("P1");
+                        int add = num + 1;
+                        itemCount.setText(String.valueOf(add));
+                        if (add > 1) {
+                            removeButton.setBackgroundColor(Color.parseColor("#e1b12c"));
+                        }
+                        qq = qq + 1;
+                        if (stq <= qq) {
+                            addButton.setBackgroundColor(Color.parseColor("#b2bec3"));
+                        }
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(),"Sorry, stock limit reached",Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+
                 PriceCheck();
             }
         });
@@ -300,6 +392,31 @@ public class ProductDetails extends AppCompatActivity {
                     }
                     else {
                         removeButton.setBackgroundColor(Color.parseColor("#e1b12c"));
+                    }
+
+                    int o = 0;
+                    for (int i = 0; i < myCartList.size(); i++) {
+                        if (item_id.equals(myCartList.get(i).getIem_item_id())) {
+                            String qty = myCartList.get(i).getItem_qty();
+                            int qq = Integer.parseInt(qty);
+                            if (stockQty == null) {
+                                stockQty = "0";
+                                if (stockQty.isEmpty()) {
+                                    stockQty = "0";
+                                }
+                            }
+                            int stq = Integer.parseInt(stockQty);
+                            if (stq > qq) {
+                                addButton.setBackgroundColor(Color.parseColor("#e1b12c"));
+                            }
+                            else {
+                                addButton.setBackgroundColor(Color.parseColor("#b2bec3"));
+                            }
+                            o = 1;
+                        }
+                    }
+                    if (o == 0) {
+                        addButton.setBackgroundColor(Color.parseColor("#e1b12c"));
                     }
                     PriceCheck();
                 }
