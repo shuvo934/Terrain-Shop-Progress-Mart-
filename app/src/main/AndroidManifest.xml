@@ -12,8 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TerrainShop">
-        <activity android:name=".login.ForgotPassword"></activity>
-        <activity android:name=".profile.UpdateLocation" />
+        <activity
+            android:name=".adminlogin.reports.salesOrder.SalesOrderDetails"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".adminlogin.reports.salesOrder.OrderCollection"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".adminlogin.reports.ReportPage"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".adminlogin.AdminLogin"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".login.ForgotPassword"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".profile.UpdateLocation"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".profile.UpdateProfile"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"

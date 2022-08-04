@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".adminlogin.reports.salesOrder.OrderCollection">
+
+    <RelativeLayout
+        android:id="@+id/order_collection_design_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:id="@+id/order_collection_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:id="@+id/order_collection_back_logo"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow_back_24"
+                app:tint="@color/primary_variant_second" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/order_collection_back_logo"
+                android:fontFamily="@font/patua_one"
+                android:text="ORDER COLLECTION"
+                android:textColor="@color/primary_variant_second"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/order_collection_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_yellow"
+            android:orientation="vertical"/>
+
+        <RelativeLayout
+            android:id="@+id/order_collection_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/order_collection_action_bar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:padding="@dimen/_4sdp"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:weightSum="1">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2.5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".5"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="@color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/primary_variant_second">
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    app:boxCornerRadiusTopStart="10dp"
+                                    app:boxCornerRadiusTopEnd="10dp"
+                                    app:boxCornerRadiusBottomEnd="10dp"
+                                    app:boxCornerRadiusBottomStart="10dp"
+                                    app:boxBackgroundColor="@color/white"
+                                    app:boxBackgroundMode="filled"
+                                    app:boxStrokeWidth="0dp"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:hint="Begin Date"
+                                    app:startIconDrawable="@drawable/calendar_icon"
+                                    app:startIconTintMode="screen"
+                                    app:startIconTint="@android:color/transparent">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/begin_date_sales_order"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text=""
+                                        android:clickable="true"
+                                        android:focusable="false"
+                                        android:inputType="date"
+                                        android:imeOptions="actionDone"
+                                        android:textColor="@color/black"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2.5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".5"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="@color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/primary_variant_second">
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    app:boxCornerRadiusTopStart="10dp"
+                                    app:boxCornerRadiusTopEnd="10dp"
+                                    app:boxCornerRadiusBottomEnd="10dp"
+                                    app:boxCornerRadiusBottomStart="10dp"
+                                    app:boxBackgroundColor="@color/white"
+                                    app:boxBackgroundMode="filled"
+                                    app:boxStrokeWidth="0dp"
+                                    android:hint="End Date"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    app:startIconDrawable="@drawable/calendar_icon"
+                                    app:startIconTintMode="screen"
+                                    app:startIconTint="@android:color/transparent">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/end_date_sales_order"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text=""
+                                        android:inputType="date"
+                                        android:clickable="true"
+                                        android:focusable="false"
+                                        android:imeOptions="actionDone"
+                                        android:textColor="@color/black"/>
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/date_range_msg_sales_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date Range is Invalid"
+                        android:textColor="@android:color/holo_red_light"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:weightSum="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="2.5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".5"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="@color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/primary_variant_second">
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/spinner_layout_division_name_so"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    app:boxCornerRadiusTopStart="10dp"
+                                    app:boxCornerRadiusTopEnd="10dp"
+                                    app:boxCornerRadiusBottomEnd="10dp"
+                                    app:boxCornerRadiusBottomStart="10dp"
+                                    app:boxBackgroundColor="@color/white"
+                                    app:boxBackgroundMode="filled"
+                                    app:endIconMode="dropdown_menu"
+                                    app:boxStrokeWidth="0dp"
+                                    android:hint="Division"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                                    >
+
+                                    <com.rosemaryapp.amazingspinner.AmazingSpinner
+                                        android:id="@+id/division_name_so_spinner"
+                                        style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                                        android:layout_width="match_parent"
+                                        android:text=""
+                                        android:layout_height="wrap_content"
+                                        />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2.5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight=".5"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="@color/white">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/primary_variant_second">
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/spinner_layout_location_name_so"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    app:boxCornerRadiusTopStart="10dp"
+                                    app:boxCornerRadiusTopEnd="10dp"
+                                    app:boxCornerRadiusBottomEnd="10dp"
+                                    app:boxCornerRadiusBottomStart="10dp"
+                                    app:boxBackgroundColor="@color/white"
+                                    app:boxBackgroundMode="filled"
+                                    app:endIconMode="dropdown_menu"
+                                    app:boxStrokeWidth="0dp"
+                                    android:hint="Location"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                                    >
+
+                                    <com.rosemaryapp.amazingspinner.AmazingSpinner
+                                        android:id="@+id/location_name_so_spinner"
+                                        style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
+                                        android:layout_width="match_parent"
+                                        android:text=""
+                                        android:layout_height="wrap_content"
+                                        />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="2dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:weightSum="1"
+                            android:layout_gravity="center"
+                            android:baselineAligned="false">
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".2"
+                                android:layout_margin="2dp">
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@color/white" />
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/sales_order_icon"/>
+                            </RelativeLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight=".8"
+                                android:layout_margin="2dp"
+                                >
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total Sales Order Amount"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginBottom="2dp"
+                                    android:textColor="@android:color/darker_gray"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:id="@+id/total_sales_order_amount"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="0 BDT"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="2dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizontal_scroll_sale_order"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:descendantFocusability="beforeDescendants"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:scrollbars="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:background="@android:color/black"/>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp">
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+
+                                    <TextView
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Order No"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Order Date"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Delivery Date"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Delivery Status"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Division"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Location"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Delivery Charge"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Order Amount"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="80dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Total Amount"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:background="@android:color/black"/>
+
+                                <TextView
+                                    android:id="@+id/no_sales_order_msg"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="No Sales Order Found"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="18sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:visibility="gone"/>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp">
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/sales_order_report_view"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:descendantFocusability="beforeDescendants"
+                                        android:focusable="true"
+                                        android:focusableInTouchMode="true"
+                                        android:scrollbars="vertical"
+                                        />
+                                </RelativeLayout>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@android:color/black"/>
+
+                            </LinearLayout>
+
+
+                        </HorizontalScrollView>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator_order_collection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"/>
+
+
+
+</RelativeLayout>

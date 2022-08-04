@@ -50,6 +50,7 @@ import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 import com.shuvo.ttit.terrainshop.R;
+import com.shuvo.ttit.terrainshop.adminlogin.AdminLogin;
 import com.shuvo.ttit.terrainshop.cart.OrderCart;
 import com.shuvo.ttit.terrainshop.homepage.adapters.CategoryAdapter;
 import com.shuvo.ttit.terrainshop.homepage.adapters.CustomExpandAdapter2nd;
@@ -805,6 +806,19 @@ public class HomePage extends AppCompatActivity implements CategoryAdapter.Click
             String firstTO = String.valueOf(first);
             System.out.println(firstTO);
 
+            ImageView admin = (ImageView) findViewById(R.id.admin_login_image);
+
+            admin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(HomePage.this, AdminLogin.class);
+                    startActivity(intent);
+                    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                    }
+                }
+            });
+
             userImage.setText(firstTO);
             userImage.setBackgroundResource(R.drawable.ic_circle);
             userAdapter = new UserAdapter(navigationUserLists,this,HomePage.this);
@@ -828,6 +842,18 @@ public class HomePage extends AppCompatActivity implements CategoryAdapter.Click
             TextView userImage = (TextView) findViewById(R.id.user_image_in_header);
             TextView userName = (TextView) findViewById(R.id.user_name_in_header);
             TextView email = (TextView) findViewById(R.id.user_mail_after_login);
+            ImageView admin = (ImageView) findViewById(R.id.admin_login_image);
+
+            admin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(HomePage.this, AdminLogin.class);
+                    startActivity(intent);
+                    if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                    }
+                }
+            });
 
             userName.setText("NO USER");
             email.setText("");

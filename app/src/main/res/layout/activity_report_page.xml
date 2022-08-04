@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".adminlogin.reports.ReportPage">
+
+    <RelativeLayout
+        android:id="@+id/report_page_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/design2"
+        android:padding="16dp">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/progress_mart_logo_report_page"
+            android:layout_centerVertical="true"
+            android:src="@drawable/terrain_shop_icon"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@+id/progress_mart_logo_report_page"
+            android:fontFamily="@font/patua_one"
+            android:text="PROGRESS MART"
+            android:textColor="@color/primary_variant_second"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/report_page_action_bar"
+        android:layout_width="match_parent"
+        android:layout_alignParentStart="true"
+        android:id="@+id/report_page_scroll_view"
+        android:layout_alignParentEnd="true"
+        android:padding="@dimen/_15sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/order_collection"
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="@dimen/_100sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/sales_order"
+                            android:tint="@color/dark_yellow"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Order Collection"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="@dimen/_100sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/delivery_c"
+                            android:tint="@color/dark_yellow"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Delivery Register"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="@dimen/_100sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/delivery_pending_icon"
+                            android:tint="@color/dark_yellow"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Pending Delivery"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="@dimen/_100sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/top_n"
+                            android:tint="@color/dark_yellow"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Top Sale Item"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="10"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="@dimen/_100sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/stock"
+                            android:tint="@color/dark_yellow"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Item Wise Stock"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="@dimen/_100sdp"
+                    app:cardElevation="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:src="@drawable/reorder"
+                            android:tint="@color/dark_yellow"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Re-Order"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

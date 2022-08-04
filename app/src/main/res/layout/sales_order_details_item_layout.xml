@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/back_color"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/item_name_sod"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Item Name"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/hs_code_sod"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="HS Code"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/quantity_sod"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Quantity"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/unit_sod"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Unit"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/unit_price_sod"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Unit/Price"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+    <TextView
+        android:id="@+id/discount_type_sod"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="Discount Type"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/dis_value_unit_sod"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Dis. Value/Unit"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/rate_unit_sod"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Rate"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <TextView
+        android:id="@+id/order_amount_sod"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Order Amount"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+    <TextView
+        android:id="@+id/deliverd_qty_sod"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Delivered Qty"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+    <TextView
+        android:id="@+id/return_qty_sod"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Return Qty"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+    <TextView
+        android:id="@+id/balance_qty_sod"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center"
+        android:text="Balance Qty"
+        android:padding="2dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+</LinearLayout>
