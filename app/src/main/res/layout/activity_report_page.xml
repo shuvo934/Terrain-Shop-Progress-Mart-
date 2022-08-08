@@ -182,6 +182,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/top_n_item"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="@dimen/_100sdp"
@@ -209,7 +210,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Top Sale Item"
+                            android:text="Top N Item"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:layout_margin="@dimen/_4sdp"
@@ -266,6 +267,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/re_order"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="@dimen/_100sdp"

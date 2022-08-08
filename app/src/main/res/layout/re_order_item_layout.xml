@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/back_color"
+    android:weightSum="1.5">
+
+    <TextView
+        android:id="@+id/first_item_stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Item Name"
+        android:gravity="start"
+        android:textStyle="bold"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"
+        android:layout_weight=".45"/>
+    <TextView
+        android:id="@+id/second_item_stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Unit"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:layout_weight=".15"/>
+    <TextView
+        android:id="@+id/third_item_stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Quantity"
+        android:gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:layout_weight=".2"/>
+    <TextView
+        android:id="@+id/fourth_item_stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:layout_weight=".4"/>
+    <TextView
+        android:id="@+id/fifth_item_stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Stock"
+        android:gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:layout_weight=".3"/>
+
+</LinearLayout>
