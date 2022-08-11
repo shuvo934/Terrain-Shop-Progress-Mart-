@@ -146,6 +146,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/delivery_pending"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="@dimen/_100sdp"

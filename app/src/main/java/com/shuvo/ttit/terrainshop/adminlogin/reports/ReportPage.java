@@ -11,6 +11,7 @@ import android.view.View;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.shuvo.ttit.terrainshop.R;
+import com.shuvo.ttit.terrainshop.adminlogin.reports.deliverypending.DeliveryPending;
 import com.shuvo.ttit.terrainshop.adminlogin.reports.deliveryregister.DeliveryRegister;
 import com.shuvo.ttit.terrainshop.adminlogin.reports.itemstock.ItemWiseStock;
 import com.shuvo.ttit.terrainshop.adminlogin.reports.reorder.ReOrder;
@@ -25,6 +26,7 @@ public class ReportPage extends AppCompatActivity {
     MaterialCardView reOrder;
     MaterialCardView deliveryRegister;
     MaterialCardView itemWiseStock;
+    MaterialCardView deliveryPending;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class ReportPage extends AppCompatActivity {
         reOrder = findViewById(R.id.re_order);
         deliveryRegister = findViewById(R.id.delivery_register);
         itemWiseStock = findViewById(R.id.item_wise_stock);
+        deliveryPending = findViewById(R.id.delivery_pending);
 
         orderCollection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +76,14 @@ public class ReportPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ReportPage.this, ItemWiseStock.class);
+                startActivity(intent);
+            }
+        });
+
+        deliveryPending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ReportPage.this, DeliveryPending.class);
                 startActivity(intent);
             }
         });
