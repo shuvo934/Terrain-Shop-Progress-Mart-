@@ -13,4 +13,5 @@
     <color name="primary_second">#487eb0</color>
     <color name="primary_variant_second">#40739e</color>
     <color name="disabled">#b2bec3</color>
+    <color name="back_wh">#ffeaa7</color>
 </resources>

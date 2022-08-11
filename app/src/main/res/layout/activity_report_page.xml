@@ -98,6 +98,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/delivery_register"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="@dimen/_100sdp"
@@ -172,7 +173,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Pending Delivery"
+                            android:text="Delivery Pending"
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:layout_margin="@dimen/_4sdp"
@@ -230,6 +231,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/item_wise_stock"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="@dimen/_100sdp"

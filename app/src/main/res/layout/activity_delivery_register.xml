@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".adminlogin.reports.salesOrder.OrderCollection">
+    tools:context=".adminlogin.reports.deliveryregister.DeliveryRegister">
 
     <RelativeLayout
-        android:id="@+id/order_collection_design_layout"
+        android:id="@+id/delivery_register_design_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
@@ -17,7 +17,7 @@
         android:layout_alignParentStart="true">
 
         <RelativeLayout
-            android:id="@+id/order_collection_action_bar"
+            android:id="@+id/delivery_register_action_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -27,7 +27,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:id="@+id/order_collection_back_logo"
+                android:id="@+id/delivery_register_back_logo"
                 android:layout_centerVertical="true"
                 android:src="@drawable/arrow_back_24"
                 app:tint="@color/primary_variant_second" />
@@ -37,26 +37,26 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/order_collection_back_logo"
+                android:layout_toEndOf="@+id/delivery_register_back_logo"
                 android:fontFamily="@font/patua_one"
-                android:text="ORDER COLLECTION"
+                android:text="DELIVERY REGISTER"
                 android:textColor="@color/primary_variant_second"
                 android:textSize="18sp" />
 
         </RelativeLayout>
 
         <LinearLayout
-            android:layout_below="@+id/order_collection_action_bar"
+            android:layout_below="@+id/delivery_register_action_bar"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/dark_yellow"
             android:orientation="vertical"/>
 
         <RelativeLayout
-            android:id="@+id/order_collection_layout"
+            android:id="@+id/delivery_register_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/order_collection_action_bar"
+            android:layout_below="@+id/delivery_register_action_bar"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true">
@@ -114,7 +114,7 @@
                                     app:startIconTint="@android:color/transparent">
 
                                     <com.google.android.material.textfield.TextInputEditText
-                                        android:id="@+id/begin_date_sales_order"
+                                        android:id="@+id/begin_date_delivery_register"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text=""
@@ -161,7 +161,7 @@
                                     app:startIconTint="@android:color/transparent">
 
                                     <com.google.android.material.textfield.TextInputEditText
-                                        android:id="@+id/end_date_sales_order"
+                                        android:id="@+id/end_date_delivery_register"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text=""
@@ -179,7 +179,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/date_range_msg_sales_order"
+                        android:id="@+id/date_range_msg_delivery_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Date Range is Invalid"
@@ -211,7 +211,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="@color/primary_variant_second">
                                 <com.google.android.material.textfield.TextInputLayout
-                                    android:id="@+id/spinner_layout_division_name_so"
+                                    android:id="@+id/spinner_layout_division_name_dr"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="1dp"
@@ -228,7 +228,7 @@
                                     >
 
                                     <com.rosemaryapp.amazingspinner.AmazingSpinner
-                                        android:id="@+id/division_name_so_spinner"
+                                        android:id="@+id/division_name_dr_spinner"
                                         style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
                                         android:layout_width="match_parent"
                                         android:text=""
@@ -255,7 +255,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="@color/primary_variant_second">
                                 <com.google.android.material.textfield.TextInputLayout
-                                    android:id="@+id/spinner_layout_location_name_so"
+                                    android:id="@+id/spinner_layout_location_name_dr"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="1dp"
@@ -272,7 +272,7 @@
                                     >
 
                                     <com.rosemaryapp.amazingspinner.AmazingSpinner
-                                        android:id="@+id/location_name_so_spinner"
+                                        android:id="@+id/location_name_dr_spinner"
                                         style="@style/Widget.MaterialComponents.AutoCompleteTextView.FilledBox"
                                         android:layout_width="match_parent"
                                         android:text=""
@@ -334,14 +334,14 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Total Sales Order Amount"
+                                    android:text="Total Invoice Amount"
                                     android:layout_marginStart="5dp"
                                     android:layout_marginBottom="2dp"
                                     android:textColor="@android:color/darker_gray"
                                     android:textStyle="bold"/>
 
                                 <TextView
-                                    android:id="@+id/total_sales_order_amount"
+                                    android:id="@+id/total_invoice_amount_dr"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto_medium"
@@ -369,7 +369,7 @@
                         app:cardCornerRadius="10dp">
 
                         <HorizontalScrollView
-                            android:id="@+id/horizontal_scroll_sale_order"
+                            android:id="@+id/horizontal_scroll_delivery_register"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:descendantFocusability="beforeDescendants"
@@ -389,7 +389,6 @@
                                     android:layout_marginStart="5dp"
                                     android:layout_marginEnd="5dp"
                                     android:background="@android:color/black"/>
-
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -398,6 +397,40 @@
                                     android:gravity="center"
                                     android:layout_marginStart="5dp"
                                     android:layout_marginEnd="5dp">
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+
+                                    <TextView
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Delivery No"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/black"/>
+
+                                    <TextView
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:gravity="center"
+                                        android:text="Delivery Date"
+                                        android:textColor="@color/primary_variant_second"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold" />
 
                                     <View
                                         android:layout_width="1dp"
@@ -432,11 +465,11 @@
                                         android:textColor="@color/primary_variant_second"
                                         android:textSize="12sp"
                                         android:textStyle="bold" />
-
                                     <View
                                         android:layout_width="1dp"
                                         android:layout_height="match_parent"
                                         android:background="@android:color/black"/>
+
                                     <TextView
                                         android:layout_width="100dp"
                                         android:layout_height="wrap_content"
@@ -444,7 +477,7 @@
                                         android:layout_marginStart="5dp"
                                         android:layout_marginEnd="5dp"
                                         android:gravity="center"
-                                        android:text="Delivery Date"
+                                        android:text="Delivery Location"
                                         android:textColor="@color/primary_variant_second"
                                         android:textSize="12sp"
                                         android:textStyle="bold" />
@@ -453,54 +486,7 @@
                                         android:layout_width="1dp"
                                         android:layout_height="match_parent"
                                         android:background="@android:color/black"/>
-                                    <TextView
-                                        android:layout_width="80dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="5dp"
-                                        android:layout_marginEnd="5dp"
-                                        android:gravity="center"
-                                        android:text="Delivery Status"
-                                        android:textColor="@color/primary_variant_second"
-                                        android:textSize="12sp"
-                                        android:textStyle="bold" />
 
-                                    <View
-                                        android:layout_width="1dp"
-                                        android:layout_height="match_parent"
-                                        android:background="@android:color/black"/>
-                                    <TextView
-                                        android:layout_width="80dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="5dp"
-                                        android:layout_marginEnd="5dp"
-                                        android:gravity="center"
-                                        android:text="Division"
-                                        android:textColor="@color/primary_variant_second"
-                                        android:textSize="12sp"
-                                        android:textStyle="bold" />
-
-                                    <View
-                                        android:layout_width="1dp"
-                                        android:layout_height="match_parent"
-                                        android:background="@android:color/black"/>
-                                    <TextView
-                                        android:layout_width="80dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="5dp"
-                                        android:layout_marginEnd="5dp"
-                                        android:gravity="center"
-                                        android:text="Location"
-                                        android:textColor="@color/primary_variant_second"
-                                        android:textSize="12sp"
-                                        android:textStyle="bold" />
-
-                                    <View
-                                        android:layout_width="1dp"
-                                        android:layout_height="match_parent"
-                                        android:background="@android:color/black"/>
                                     <TextView
                                         android:layout_width="80dp"
                                         android:layout_height="wrap_content"
@@ -517,22 +503,7 @@
                                         android:layout_width="1dp"
                                         android:layout_height="match_parent"
                                         android:background="@android:color/black"/>
-                                    <TextView
-                                        android:layout_width="80dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="5dp"
-                                        android:layout_marginEnd="5dp"
-                                        android:gravity="center"
-                                        android:text="Order Amount"
-                                        android:textColor="@color/primary_variant_second"
-                                        android:textSize="12sp"
-                                        android:textStyle="bold" />
 
-                                    <View
-                                        android:layout_width="1dp"
-                                        android:layout_height="match_parent"
-                                        android:background="@android:color/black"/>
                                     <TextView
                                         android:layout_width="80dp"
                                         android:layout_height="wrap_content"
@@ -540,7 +511,7 @@
                                         android:layout_marginStart="5dp"
                                         android:layout_marginEnd="5dp"
                                         android:gravity="center"
-                                        android:text="Total Amount"
+                                        android:text="Invoice Amount"
                                         android:textColor="@color/primary_variant_second"
                                         android:textSize="12sp"
                                         android:textStyle="bold" />
@@ -559,10 +530,10 @@
                                     android:background="@android:color/black"/>
 
                                 <TextView
-                                    android:id="@+id/no_sales_order_msg"
+                                    android:id="@+id/no_delivery_order_msg"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="No Sales Order Found"
+                                    android:text="No Delivery Order Found"
                                     android:textColor="@color/black"
                                     android:textStyle="bold"
                                     android:textSize="18sp"
@@ -577,7 +548,7 @@
                                     android:layout_marginEnd="5dp">
 
                                     <androidx.recyclerview.widget.RecyclerView
-                                        android:id="@+id/sales_order_report_view"
+                                        android:id="@+id/delivery_order_report_view"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:descendantFocusability="beforeDescendants"
@@ -586,6 +557,7 @@
                                         android:scrollbars="vertical"
                                         />
                                 </RelativeLayout>
+
                                 <View
                                     android:layout_width="match_parent"
                                     android:layout_height="1dp"
@@ -593,12 +565,10 @@
                                     android:layout_marginEnd="5dp"
                                     android:layout_marginBottom="10dp"
                                     android:background="@android:color/black"/>
-
                             </LinearLayout>
 
 
                         </HorizontalScrollView>
-
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
@@ -609,16 +579,13 @@
 
     </RelativeLayout>
 
-
     <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/progress_indicator_order_collection"
+        android:id="@+id/progress_indicator_delivery_register"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:indeterminate="true"
         android:layout_gravity="center"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"/>
-
-
 
 </RelativeLayout>
