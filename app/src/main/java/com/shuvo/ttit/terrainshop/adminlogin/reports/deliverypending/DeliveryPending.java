@@ -149,8 +149,14 @@ public class DeliveryPending extends AppCompatActivity implements DeliveryPendin
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yy", Locale.getDefault());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM-yy",Locale.getDefault());
 
-        firstDate = simpleDateFormat.format(c);
+
+        Calendar dd = Calendar.getInstance();
+        dd.add(Calendar.MONTH, -6);
+        Date ds = dd.getTime();
+        //System.out.println(simpleDateFormat.format(ds));
+        firstDate = simpleDateFormat.format(ds);
         firstDate = "01-"+firstDate;
+
         //firstDate = df.format(c);
         lastDate = df.format(c);
 

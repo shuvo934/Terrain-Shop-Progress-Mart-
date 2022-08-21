@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TerrainShop">
-        <activity android:name=".adminlogin.reports.deliverypending.DeliveryPending"></activity>
+        <activity android:name=".adminlogin.reports.deliverypending.DeliveryPending"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".adminlogin.reports.itemstock.ItemWiseStock"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"

@@ -34,6 +34,7 @@ import com.rosemaryapp.amazingspinner.AmazingSpinner;
 import com.shuvo.ttit.terrainshop.R;
 import com.shuvo.ttit.terrainshop.adminlogin.reports.salesOrder.adapters.SalesOrderAdapter;
 import com.shuvo.ttit.terrainshop.adminlogin.reports.salesOrder.lists.SalesOrderList;
+import com.shuvo.ttit.terrainshop.adminlogin.reports.topnitem.lists.ChoiceList;
 import com.shuvo.ttit.terrainshop.checkout.lists.UpazilaList;
 import com.shuvo.ttit.terrainshop.signup.SignUp;
 import com.shuvo.ttit.terrainshop.signup.lists.DivisionList;
@@ -68,6 +69,7 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
     TextView daterange;
     AmazingSpinner divisionSpinner;
     AmazingSpinner locationSpinner;
+    AmazingSpinner deliveryStatusSpinner;
     TextInputLayout thanaLay;
     TextView noOrderMsg;
     TextView totalSalesOrderAmount;
@@ -84,6 +86,7 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
     String dd_id = "";
     String div_Name = "";
     String thana_name = "";
+    String delivery_status = "";
     double total_sales_order_amnt = 0.0;
     private int mYear, mMonth, mDay;
 
@@ -95,6 +98,7 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
     ArrayList<DivisionList> divisionLists;
     ArrayList<ThanaList> thanaLists;
     ArrayList<SalesOrderList> filteredList;
+    ArrayList<ChoiceList> deliveryStatusLists;
 
     private boolean isfiltered = false;
 
@@ -128,6 +132,7 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
         thanaLay.setEnabled(false);
         itemView = findViewById(R.id.sales_order_report_view);
         noOrderMsg = findViewById(R.id.no_sales_order_msg);
+        deliveryStatusSpinner = findViewById(R.id.delivery_status_oc_spinner);
 
         totalSalesOrderAmount = findViewById(R.id.total_sales_order_amount);
 
@@ -135,6 +140,11 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
         divisionLists = new ArrayList<>();
         thanaLists = new ArrayList<>();
         filteredList = new ArrayList<>();
+        deliveryStatusLists = new ArrayList<>();
+
+        deliveryStatusLists.add(new ChoiceList("","..."));
+        deliveryStatusLists.add(new ChoiceList("1","DELIVERED"));
+        deliveryStatusLists.add(new ChoiceList("2","PENDING"));
 
         itemView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -142,6 +152,13 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(itemView.getContext(),DividerItemDecoration.VERTICAL);
         itemView.addItemDecoration(dividerItemDecoration);
 
+        ArrayList<String> type2 = new ArrayList<>();
+        for(int i = 0; i < deliveryStatusLists.size(); i++) {
+            type2.add(deliveryStatusLists.get(i).getType());
+        }
+        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(getApplicationContext(),R.layout.dropdown_menu_popup_item,R.id.drop_down_item,type2);
+
+        deliveryStatusSpinner.setAdapter(arrayAdapter2);
 
         //getting date
         Date c = Calendar.getInstance().getTime();
@@ -407,6 +424,30 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
             }
         });
 
+        deliveryStatusSpinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                delivery_status = "";
+                String name = adapterView.getItemAtPosition(i).toString();
+                for (int j = 0; j < deliveryStatusLists.size(); j++) {
+                    if (name.equals(deliveryStatusLists.get(j).getType())) {
+                        if (deliveryStatusLists.get(j).getId().isEmpty()) {
+                            delivery_status = "";
+                        }
+                        else {
+                            delivery_status = deliveryStatusLists.get(j).getType();
+                        }
+                    }
+                }
+
+                if (name.equals("...")) {
+                    deliveryStatusSpinner.setText("");
+                }
+
+                filter(delivery_status);
+            }
+        });
+
         orderCollectionBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -469,54 +510,165 @@ public class OrderCollection extends AppCompatActivity implements SalesOrderAdap
         return false;
     }
 
-    private void filterCate(String text) {
+    private void filter(String text) {
 
         filteredList = new ArrayList<>();
         for (SalesOrderList item : salesOrderLists) {
-            if (thana_name.isEmpty()){
-                if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
-                    filteredList.add((item));
-                    isfiltered = true;
-                }
-            } else {
-                if (item.getLocation_name().toLowerCase().contains(thana_name.toLowerCase())) {
-                    if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
+            if (thana_name.isEmpty()) {
+                if (div_Name.isEmpty()) {
+                    if (item.getDelivery_status().toLowerCase().contains(text.toLowerCase())) {
                         filteredList.add((item));
                         isfiltered = true;
                     }
+                } else {
+                    if (item.getDivision_name().toLowerCase().contains(div_Name.toLowerCase())) {
+                        if (item.getDelivery_status().toLowerCase().contains(text.toLowerCase())) {
+                            filteredList.add((item));
+                            isfiltered = true;
+                        }
+                    }
                 }
+            } else {
+                if (div_Name.isEmpty()) {
+                    if (item.getLocation_name().toLowerCase().contains(thana_name.toLowerCase())) {
+                        if (item.getDelivery_status().toLowerCase().contains(text.toLowerCase())) {
+                            filteredList.add((item));
+                            isfiltered = true;
+
+                        }
+                    }
+                } else {
+                    if (item.getDivision_name().toLowerCase().contains(div_Name.toLowerCase())) {
+                        if (item.getLocation_name().toLowerCase().contains(thana_name.toLowerCase())) {
+                            if (item.getDelivery_status().toLowerCase().contains(text.toLowerCase())) {
+                                filteredList.add((item));
+                                isfiltered = true;
+
+                            }
+                        }
+                    }
+                }
+
             }
-//            if (searchingName.isEmpty()) {
-//                if (item.getDep_name().toLowerCase().contains(text.toLowerCase())) {
-//                    filteredList.add((item));
-//                }
-//            } else {
-//                if (item.getEmp_name().toLowerCase().contains(searchingName.toLowerCase())) {
-//                    if (item.getDep_name().toLowerCase().contains(text.toLowerCase())) {
-//                        filteredList.add((item));
-//                    }
-//                }
-//            }
 
         }
         salesOrderAdapter.filterList(filteredList);
         totalOfAll();
     }
 
+    private void filterCate(String text) {
+
+//        filteredList = new ArrayList<>();
+//        for (SalesOrderList item : salesOrderLists) {
+//            if (thana_name.isEmpty()){
+//                if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
+//                    filteredList.add((item));
+//                    isfiltered = true;
+//                }
+//            } else {
+//                if (item.getLocation_name().toLowerCase().contains(thana_name.toLowerCase())) {
+//                    if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
+//                        filteredList.add((item));
+//                        isfiltered = true;
+//                    }
+//                }
+//            }
+//        }
+
+        filteredList = new ArrayList<>();
+        for (SalesOrderList item : salesOrderLists) {
+            if (thana_name.isEmpty()) {
+                if (delivery_status.isEmpty()) {
+                    if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
+                        filteredList.add((item));
+                        isfiltered = true;
+                    }
+                } else {
+                    if (item.getDelivery_status().toLowerCase().contains(delivery_status.toLowerCase())) {
+                        if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
+                            filteredList.add((item));
+                            isfiltered = true;
+                        }
+                    }
+                }
+            } else {
+                if (delivery_status.isEmpty()) {
+                    if (item.getLocation_name().toLowerCase().contains(thana_name.toLowerCase())) {
+                        if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
+                            filteredList.add((item));
+                            isfiltered = true;
+                        }
+                    }
+                } else {
+                    if (item.getLocation_name().toLowerCase().contains(thana_name.toLowerCase())) {
+                        if (item.getDelivery_status().toLowerCase().contains(delivery_status.toLowerCase())) {
+                            if (item.getDivision_name().toLowerCase().contains(text.toLowerCase())) {
+                                filteredList.add((item));
+                                isfiltered = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        salesOrderAdapter.filterList(filteredList);
+        totalOfAll();
+    }
+
     private void filterSubCate(String text) {
+
+//        filteredList = new ArrayList<>();
+//        for (SalesOrderList item : salesOrderLists) {
+//            if (div_Name.isEmpty()) {
+//                if (item.getLocation_name().toLowerCase().contains(text.toLowerCase())){
+//                    filteredList.add((item));
+//                    isfiltered = true;
+//                }
+//            } else {
+//                if (item.getDivision_name().toLowerCase().contains(div_Name.toLowerCase())){
+//                    if (item.getLocation_name().toLowerCase().contains(text.toLowerCase())){
+//                        filteredList.add((item));
+//                        isfiltered = true;
+//                    }
+//                }
+//            }
+//
+//        }
+//        salesOrderAdapter.filterList(filteredList);
 
         filteredList = new ArrayList<>();
         for (SalesOrderList item : salesOrderLists) {
             if (div_Name.isEmpty()) {
-                if (item.getLocation_name().toLowerCase().contains(text.toLowerCase())){
-                    filteredList.add((item));
-                    isfiltered = true;
-                }
-            } else {
-                if (item.getDivision_name().toLowerCase().contains(div_Name.toLowerCase())){
+                if (delivery_status.isEmpty()) {
                     if (item.getLocation_name().toLowerCase().contains(text.toLowerCase())){
                         filteredList.add((item));
                         isfiltered = true;
+                    }
+                } else {
+                    if (item.getDelivery_status().toLowerCase().contains(delivery_status.toLowerCase())){
+                        if (item.getLocation_name().toLowerCase().contains(text.toLowerCase())){
+                            filteredList.add((item));
+                            isfiltered = true;
+                        }
+                    }
+                }
+            } else {
+                if (delivery_status.isEmpty()) {
+                    if (item.getDivision_name().toLowerCase().contains(div_Name.toLowerCase())){
+                        if (item.getLocation_name().toLowerCase().contains(text.toLowerCase())){
+                            filteredList.add((item));
+                            isfiltered = true;
+                        }
+                    }
+                } else {
+                    if (item.getDivision_name().toLowerCase().contains(div_Name.toLowerCase())){
+                        if (item.getDelivery_status().toLowerCase().contains(delivery_status.toLowerCase())){
+                            if (item.getLocation_name().toLowerCase().contains(text.toLowerCase())){
+                                filteredList.add((item));
+                                isfiltered = true;
+                            }
+                        }
                     }
                 }
             }
