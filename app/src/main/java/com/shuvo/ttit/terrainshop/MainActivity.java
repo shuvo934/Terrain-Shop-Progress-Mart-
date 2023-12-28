@@ -1,9 +1,14 @@
 package com.shuvo.ttit.terrainshop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -87,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println(loginfile);
 
-        goToActivityMap();
+        enableFileAccess();
     }
 
     private void goToActivityMap() {
@@ -108,5 +113,95 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }, 3000);
+    }
+
+    private void enableFileAccess() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            int REQUEST_CODE_PERMISSION_STORAGE = 100;
+            String[] permission = {
+                    Manifest.permission.READ_MEDIA_IMAGES,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+            };
+
+            for (String str : permission) {
+                if (this.checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+                    this.requestPermissions(permission, REQUEST_CODE_PERMISSION_STORAGE);
+                    return;
+                }
+            }
+
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                goToActivityMap();
+            }
+        }
+        else {
+            int REQUEST_CODE_PERMISSION_STORAGE = 100;
+            String[] permission = {
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+            };
+
+            for (String str : permission) {
+                if (this.checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+                    this.requestPermissions(permission, REQUEST_CODE_PERMISSION_STORAGE);
+                    return;
+                }
+            }
+
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+                    && ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                goToActivityMap();
+            }
+        }
+    }
+//    private void enableFileAccess() {
+//
+//        if (Build.VERSION.SDK_INT >= 23) {
+//            int REQUEST_CODE_PERMISSION_STORAGE = 100;
+//            String[] permission = new String[0];
+//            permission = new String[]{
+//                    Manifest.permission.READ_EXTERNAL_STORAGE,
+//                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+//            };
+//
+//
+//
+//            for (String str : permission) {
+//                System.out.println(str);
+//                if (this.checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+//                    System.out.println(str);
+//                    this.requestPermissions(permission, REQUEST_CODE_PERMISSION_STORAGE);
+//                    return;
+//                }
+//
+//            }
+//
+//            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
+//                    ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+//                goToActivityMap();
+//            }
+//
+//
+//        }
+//    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100) {
+            if (grantResults.length > 0 &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                goToActivityMap();
+                // Permission is granted. Continue the action or workflow
+                // in your app.
+            } else {
+                System.exit(0);
+                // Explain to the user that the feature is unavailable because
+                // the features requires a permission that the user has denied.
+                // At the same time, respect the user's decision. Don't link to
+                // system settings in an effort to convince the user to change
+                // their decision.
+            }
+        }
     }
 }

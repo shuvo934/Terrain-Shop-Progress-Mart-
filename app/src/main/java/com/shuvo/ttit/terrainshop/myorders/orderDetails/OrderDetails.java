@@ -14,21 +14,49 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.RemoteException;
+import android.print.PrintAttributes;
+import android.print.PrintDocumentAdapter;
+import android.print.PrintManager;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import com.shuvo.ttit.terrainshop.R;
 import com.shuvo.ttit.terrainshop.myorders.adpaters.OrderDetailsAdapter;
 import com.shuvo.ttit.terrainshop.myorders.lists.OrderDetailsList;
+import com.shuvo.ttit.terrainshop.pdfCreation.PDFUtils;
+import com.shuvo.ttit.terrainshop.pdfCreation.PdfDocumentAdapter;
+import com.shuvo.ttit.terrainshop.pdfCreation.model.SuperHeroModel;
+import com.sunmi.peripheral.printer.InnerPrinterCallback;
+import com.sunmi.peripheral.printer.InnerPrinterException;
+import com.sunmi.peripheral.printer.InnerPrinterManager;
+import com.sunmi.peripheral.printer.InnerResultCallback;
+import com.sunmi.peripheral.printer.SunmiPrinterService;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Blob;
 import java.sql.Connection;
@@ -37,6 +65,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import static com.shuvo.ttit.terrainshop.connection.OracleConnection.createConnection;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.ObservableSource;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class OrderDetails extends AppCompatActivity {
 
@@ -81,9 +114,16 @@ public class OrderDetails extends AppCompatActivity {
     RelativeLayout layout;
     CircularProgressIndicator circularProgressIndicator;
 
-    RelativeLayout orderDBar;
+    ImageView orderDBar;
     private AsyncTask mTask;
     ScrollView orderScroll;
+    ImageView print;
+
+    private static final  String FILE_PRINT = "last_file_print.pdf";
+    private AlertDialog alertDialog;
+
+//    ArrayList<SuperHeroModel> superHeroModels = new ArrayList<>();
+    InnerPrinterCallback innerPrinterCallBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +157,10 @@ public class OrderDetails extends AppCompatActivity {
         circularProgressIndicator = findViewById(R.id.progress_indicator_orders_details);
         circularProgressIndicator.setVisibility(View.GONE);
 
-        orderDBar = findViewById(R.id.my_orders_details_action_bar);
+        orderDBar = findViewById(R.id.back_logo_check_my_orders_details);
+
+        print = findViewById(R.id.print_order_details);
+        print.setVisibility(View.GONE);
 
         deliveryCharge = findViewById(R.id.delivery_fee_total_order_details);
 
@@ -166,9 +209,317 @@ public class OrderDetails extends AppCompatActivity {
             }
         });
 
+        InnerResultCallback innerResultCallback = new InnerResultCallback() {
+            @Override
+            public void onRunResult(boolean isSuccess) throws RemoteException {
+
+            }
+
+            @Override
+            public void onReturnString(String result) throws RemoteException {
+
+            }
+
+            @Override
+            public void onRaiseException(int code, String msg) throws RemoteException {
+
+            }
+
+            @Override
+            public void onPrintResult(int code, String msg) throws RemoteException {
+
+            }
+        };
+
+        innerPrinterCallBack = new InnerPrinterCallback() {
+            @Override
+            protected void onConnected(SunmiPrinterService service) {
+                Toast.makeText(OrderDetails.this, "Printer Connected", Toast.LENGTH_SHORT).show();
+
+                try {
+                    System.out.println("PRINTER");
+                    service.setAlignment(1,innerResultCallback);
+                    service.printTextWithFont("ORDER DETAILS\n","",36, innerResultCallback);
+                    service.printText("-------------------------------------------------------\n",innerResultCallback);
+                    service.printTextWithFont("ORDER CONFIRMED\n","",30, innerResultCallback);
+                    service.printText("-------------------------------------------------------\n",innerResultCallback);
+                    service.printText("ORDER NO: "+order_no+"\n",innerResultCallback);
+                    service.printText("-------------------------------------------------------\n",innerResultCallback);
+
+                    service.printColumnsString(new String[]{"ADDRESS: ", "",d_address},new int[]{2,2,5},
+                            new int[]{0,1,2},innerResultCallback);
+                    service.printColumnsString(new String[]{"ORDER DATE: ", "",o_date},new int[]{2,2,5},
+                            new int[]{0,1,2},innerResultCallback);
+                    service.printColumnsString(new String[]{"DELIVERY DATE: ", "",d_date},new int[]{2,2,5},
+                            new int[]{0,1,2},innerResultCallback);
+                    service.printColumnsString(new String[]{"DELIVERY TIME: ", "",d_time},new int[]{2,2,5},
+                            new int[]{0,1,2},innerResultCallback);
+
+                    service.printText("-------------------------------------------------------\n",innerResultCallback);
+                    service.printTextWithFont("ORDER SUMMARY\n","",30, innerResultCallback);
+                    service.printText("-------------------------------------------------------\n",innerResultCallback);
+
+
+                    for (int i = 0; i < orderDetailsLists.size(); i++) {
+                        service.printColumnsString(new String[]{orderDetailsLists.get(i).getItem_name(), "x"+orderDetailsLists.get(i).getSod_qty(),"TK "+orderDetailsLists.get(i).getOrder_rate()},new int[]{5,2,2},
+                                        new int[]{0,1,2},innerResultCallback);
+                    }
+//                    service.printColumnsString(new String[]{"5 Star Chocolate bar-25 GM", "x1","$40"},new int[]{5,2,2},
+//                            new int[]{0,1,2},innerResultCallback);
+//                    service.printColumnsString(new String[]{"DAIRY MILK 30% SUGAR 100 GM", "x1","$300"},new int[]{5,2,2},
+//                            new int[]{0,1,2},innerResultCallback);
+//                    service.printColumnsString(new String[]{"LOTTE WHITE COOKIE", "x2","$200"},new int[]{5,2,2},
+//                            new int[]{0,1,2},innerResultCallback);
+                    int subtotal= 0;
+                    for (int i = 0; i < orderDetailsLists.size() ; i++) {
+                        subtotal = subtotal + Integer.parseInt(orderDetailsLists.get(i).getOrder_rate());
+                    }
+
+                    service.printText("-------------------------------------------------------\n",innerResultCallback);
+                    service.printColumnsString(new String[]{"Sub Total", "","TK " +String.valueOf(subtotal)},new int[]{5,2,2},
+                            new int[]{0,1,2},innerResultCallback);
+                    service.printColumnsString(new String[]{"Delivery Charge", "","TK " + delivery_charge},new int[]{5,2,2},
+                            new int[]{0,1,2},innerResultCallback);
+                    subtotal = subtotal + Integer.parseInt(delivery_charge);
+                    service.printColumnsString(new String[]{"TOTAL", "","TK " +String.valueOf(subtotal)},new int[]{5,2,2},
+                            new int[]{0,1,2},innerResultCallback);
+                    service.printText("-------------------------------------------------------\n",innerResultCallback);
+                    service.printTextWithFont("THANK YOU\n\n","",36, innerResultCallback);
+                    service.lineWrap(3,innerResultCallback);
+                    service.cutPaper(innerResultCallback);
+                    disconnect();
+
+                }
+                catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            protected void onDisconnected() {
+
+                Toast.makeText(OrderDetails.this, "Printer Disconnected", Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        alertDialog = new AlertDialog.Builder(this)
+                .setCancelable(false)
+                .setMessage("Please Wait")
+                .create();
+
+
+//        superHeroModels.add(new SuperHeroModel("Apple",
+//                "https://chaldn.com/_mpimage/green-apple-50-gm-1-kg?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D119065&q=best&v=1&m=400",
+//                "Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment"));
+
+        print.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean result;
+                try {
+                    System.out.println("PRINTER First");
+                    result = InnerPrinterManager.getInstance().bindService(getApplicationContext(),innerPrinterCallBack);
+//                    Toast.makeText(OrderDetails.this, "Result: "+result, Toast.LENGTH_SHORT).show();
+                } catch (InnerPrinterException e) {
+                    result = false;
+                    e.printStackTrace();
+                }
+                if (!result) {
+                    alertDialog.show();
+                    createPDFFile(new StringBuilder(getFilepath()).toString());
+                }
+
+
+            }
+        });
+
+
         mTask = new Check().execute();
 
 
+    }
+
+
+    private void disconnect() {
+        try {
+            InnerPrinterManager.getInstance().unBindService(OrderDetails.this, innerPrinterCallBack);
+        } catch (InnerPrinterException e) {
+            e.printStackTrace();
+        }
+    }
+    private void createPDFFile(String path) {
+        if (new File(path).exists()) {
+            new File(path).delete();
+        }
+        System.out.println(path);
+
+        try {
+            File file = new File(path);
+            Document document = new Document();
+            //Save
+            PdfWriter.getInstance(document,new FileOutputStream(path));
+            //Open
+            document.open();
+            //Setting
+            document.setPageSize(PageSize.A4);
+            document.addCreationDate();
+            document.addAuthor("SHUVO");
+            document.addCreator("TTIT");
+            //Font Setting
+            BaseColor color = new BaseColor(0,153,204,255);
+            float fontSize = 11.0f;
+            //Custom font
+            BaseFont fontName = BaseFont.createFont("assets/font/Roboto-Regular.ttf","UTF-8",BaseFont.EMBEDDED);
+            Font descriptionFont = new Font(fontName,14.0f,Font.NORMAL,BaseColor.BLACK);
+            Font textFont = new Font(fontName, fontSize,Font.BOLD,BaseColor.BLACK);
+
+            //Create title of Document
+            Font titleFont = new Font(fontName,28.0f,Font.BOLD,BaseColor.BLACK);
+            Font secondTitleFont = new Font(fontName,18.0f,Font.BOLD,BaseColor.BLACK);
+            PDFUtils.addNewItem(document,"ORDER DETAILS\n", Element.ALIGN_CENTER,titleFont);
+            PDFUtils.addNewItem(document,"--", Element.ALIGN_CENTER,titleFont);
+            PDFUtils.addNewItem(document,"ORDER NO: " + order_no, Element.ALIGN_CENTER,textFont);
+            PDFUtils.addLineSeperator(document);
+            PDFUtils.addNewItem(document,"ORDER CONFIRMED",Element.ALIGN_CENTER,secondTitleFont);
+            PDFUtils.addLineSeperator(document);
+
+            //Add more information
+            PDFUtils.addNewItemWithLeftAndRight(document,"ADDRESS: ",d_address,textFont,textFont);
+            PDFUtils.addNewItemWithLeftAndRight(document,"ORDER DATE: ",o_date,textFont,textFont);
+            PDFUtils.addNewItemWithLeftAndRight(document,"DELIVERY DATE: ",d_date,textFont,textFont);
+            PDFUtils.addNewItemWithLeftAndRight(document,"DELIVERY TIME: ",d_time,textFont,textFont);
+            PDFUtils.addLineSeperator(document);
+            PDFUtils.addNewItem(document,"ORDER SUMMARY", Element.ALIGN_LEFT,secondTitleFont);
+//            PDFUtils.addNewItem(document,"--", Element.ALIGN_CENTER,titleFont);
+//            PDFUtils.addNewItem(document,"Ahasanul Haque", Element.ALIGN_LEFT,textFont);
+//            PDFUtils.addLineSeperator(document);
+
+            //Add detail
+            PDFUtils.addLineSeperator(document);
+//            PDFUtils.addNewItem(document, "DETAIL \n List",Element.ALIGN_CENTER,titleFont);
+//            PDFUtils.addLineSeperator(document);
+
+            //Use Rxjava, fetch Image from URL and add to PDF
+            Observable.fromIterable(orderDetailsLists)
+                    .flatMap(model -> getBitmapFromORDER(this,model,document))
+                    .subscribeOn(Schedulers.computation())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(model ->{
+                       //On next
+                       //Each Item, we will add detail
+                        PDFUtils.addNewItemWithLeftAndRight(document,model.getItem_name()+"\n"+model.getSod_qty() + " Pcs","TK "+model.getOrder_rate(),textFont,textFont);
+
+//                        PDFUtils.addLineSeperator(document);
+
+                        PDFUtils.addNewItem(document, " ",Element.ALIGN_CENTER,textFont);
+
+//                        PDFUtils.addLineSeperator(document);
+                    },throwable -> {
+                        //On Error
+                        alertDialog.dismiss();
+                        Toast.makeText(this,""+throwable.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                    },() -> {
+                        //On Complete
+                        //When Completed, close document
+                        int subtotal= 0;
+                        for (int i = 0; i < orderDetailsLists.size() ; i++) {
+                            subtotal = subtotal + Integer.parseInt(orderDetailsLists.get(i).getOrder_rate());
+                        }
+
+                        PDFUtils.addLineSeperator(document);
+                        PDFUtils.addNewItemWithLeftAndRight(document,"Sub Total", "TK "+String.valueOf(subtotal),secondTitleFont,secondTitleFont);
+//                        PDFUtils.addNewItem(document, " ",Element.ALIGN_CENTER,textFont);
+                        PDFUtils.addNewItemWithLeftAndRight(document,"Delivery Charge", "TK "+delivery_charge,secondTitleFont,secondTitleFont);
+
+                        subtotal = subtotal + Integer.parseInt(delivery_charge);
+                        PDFUtils.addLineSeperator(document);
+
+                        PDFUtils.addNewItemWithLeftAndRight(document,"TOTAL","TK "+String.valueOf(subtotal),secondTitleFont,secondTitleFont);
+                        PDFUtils.addNewItem(document, " ",Element.ALIGN_CENTER,textFont);
+
+                        PDFUtils.addLineSeperator(document);
+                        PDFUtils.addNewItem(document,"THANK YOU",Element.ALIGN_CENTER,secondTitleFont);
+                        document.close();
+                        alertDialog.dismiss();
+//                        Toast.makeText(this,"Success!", Toast.LENGTH_SHORT).show();
+
+                        printPDF();
+                    });
+
+        } catch (DocumentException | IOException e) {
+            e.printStackTrace();
+        } finally {
+            alertDialog.dismiss();
+        }
+    }
+
+    private void printPDF() {
+        PrintManager printManager = (PrintManager) getSystemService(Context.PRINT_SERVICE);
+//        PrintAttributes attributes = new PrintAttributes.Builder()
+//                .setMinMargins(PrintAttributes.Margins.NO_MARGINS)
+//                .setMediaSize(PrintAttributes.MediaSize.ISO_A4)
+//                .setResolution(new PrintAttributes.Resolution("res", "Resolution", 300, 300))
+////                .setFlags(PrintAttributes.FLAGS_SILENT) // Enable silent printing
+//                .build();
+        try {
+            PrintDocumentAdapter printDocumentAdapter = new PdfDocumentAdapter(this,new StringBuilder(getFilepath())
+                    .toString(),FILE_PRINT);
+            printManager.print("Document",printDocumentAdapter,new PrintAttributes.Builder().build());
+//            printManager.print("Document",printDocumentAdapter,attributes);
+        }catch (Exception e) {
+
+            Toast.makeText(this, ""+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private ObservableSource<SuperHeroModel> getBitmapFromUrl(Context context, SuperHeroModel model, Document document) {
+        return Observable.fromCallable(()->{
+
+            Bitmap bitmap = Glide.with(context)
+                    .asBitmap()
+                    .load(model.getImage())
+                    .submit().get();
+
+            Image image = Image.getInstance(bitmapToByteArray(bitmap));
+            image.scaleAbsolute(50,50);
+            document.add(image);
+
+            return model;
+        });
+    }
+
+    private ObservableSource<OrderDetailsList> getBitmapFromORDER(Context context, OrderDetailsList model, Document document) {
+        return Observable.fromCallable(()->{
+
+//            Bitmap bitmap = Glide.with(context)
+//                    .asBitmap()
+//                    .load(model.getImage())
+//                    .submit().get();
+
+            Image image = Image.getInstance(bitmapToByteArray(model.getBitmap()));
+            image.scaleAbsolute(50,50);
+            document.add(image);
+            return model;
+        });
+    }
+
+    private byte[] bitmapToByteArray(Bitmap bitmap) {
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
+        return stream.toByteArray();
+    }
+
+    private String getFilepath() {
+        File dir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                + File.separator
+                + FILE_PRINT );
+//        if (!dir.exists()) {
+//            dir.delete();
+//        }
+        System.out.println(dir.getPath());
+        return  dir.getPath();
     }
 
     @Override
@@ -250,6 +601,7 @@ public class OrderDetails extends AppCompatActivity {
             if (conn) {
 
                 orderScroll.setVisibility(View.VISIBLE);
+                print.setVisibility(View.VISIBLE);
                 orderDetailsAdapter = new OrderDetailsAdapter( OrderDetails.this,orderDetailsLists);
                 odsView.setAdapter(orderDetailsAdapter);
 

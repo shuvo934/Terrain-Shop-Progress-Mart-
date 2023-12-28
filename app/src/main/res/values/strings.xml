@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Progress Mart</string>
+    <string name="app_name">Terrain Shop</string>
     <string name="quote">Buy Better, Live Better</string>
-    <string name="version_control">Version 9.0</string>
-    <string name="description">This is our biggest online mart in bangladesh. We offer broad range of authentic products which will satisfy your needs.
+    <string name="version_control">Version 10.0</string>
+    <string name="description">This is our biggest online shop in bangladesh. We offer broad range of authentic products which will satisfy your needs.
     So feel free to visit our mart first or get login first to check your offer.</string>
     <string name="sign_up_name_hint">Full Name <font color='red'>*</font></string>
     <string name="sign_up_address_hint">Address <font color='red'>*</font></string>

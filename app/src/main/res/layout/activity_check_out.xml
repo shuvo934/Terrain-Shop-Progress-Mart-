@@ -86,7 +86,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="3dp"
-                            android:tint="@color/status_bar_color"
+                            app:tint="@color/status_bar_color"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/location_on"/>
 
@@ -463,7 +463,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="3dp"
                             android:layout_alignParentStart="true"
-                            android:tint="@color/status_bar_color"
+                            app:tint="@color/status_bar_color"
                             android:src="@drawable/calendar_month_24"/>
 
                         <TextView
@@ -613,7 +613,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="3dp"
                             android:layout_alignParentStart="true"
-                            android:tint="@color/status_bar_color"
+                            app:tint="@color/status_bar_color"
                             android:src="@drawable/payment_24"/>
 
                         <TextView
@@ -685,7 +685,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="3dp"
                             android:layout_alignParentStart="true"
-                            android:tint="@color/status_bar_color"
+                            app:tint="@color/status_bar_color"
                             android:src="@drawable/summarize_24"/>
 
                         <TextView
@@ -865,7 +865,7 @@
                             android:layout_marginEnd="5dp"
                             android:layout_centerVertical="true"
                             android:layout_alignParentStart="true"
-                            android:tint="@color/dark_yellow"
+                            app:tint="@color/dark_yellow"
                             android:src="@drawable/voucher_icon"/>
 
                         <TextView
@@ -943,7 +943,7 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
-                            android:tint="@color/white"
+                            app:tint="@color/white"
                             android:src="@drawable/voucher_icon"/>
 
                         <TextView

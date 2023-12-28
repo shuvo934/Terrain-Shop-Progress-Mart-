@@ -43,6 +43,17 @@
                 android:textColor="@color/primary_variant_second"
                 android:textSize="18sp" />
 
+            <ImageView
+                android:id="@+id/print_order_details"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_print_24"
+                app:tint="@color/primary_variant_second" />
+
+
+
         </RelativeLayout>
 
         <LinearLayout

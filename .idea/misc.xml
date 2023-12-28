@@ -1,5 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_admin_login.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_check_out.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_choice_page.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_delivery_order_details.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_delivery_pending.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_delivery_register.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_item_wise_stock.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_my_orders.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_order_cart.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_order_collection.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_order_completed.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_order_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_product_details.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_products.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_re_order.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_report_page.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_sales_order_details.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_search_product.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_sub_category.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_top_n_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_update_location.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_update_profile.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/activity_voucher.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/cart_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/categories_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/custom_group.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/delivery_details_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/delivery_order_details_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/delivery_order_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/delivery_pending_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/dropdown_menu_popup_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/foul_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/fragment_discount_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/fragment_new_arrival_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/fragment_top_hit_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/header.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/image_slider_layout_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/item_card_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/item_stock_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/list_group.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/mart_printing_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/order_history_details_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/order_history_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/order_summary_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/products_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/re_order_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/sales_order_details_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/top_n_item_lists_view.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/user_item_layout.xml" value="0.21739130434782608" />
+        <entry key="app/src/main/res/layout/voucher_item_details_layout.xml" value="0.21739130434782608" />
+      </map>
+    </option>
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />
     <option name="myDefaultNotNull" value="androidx.annotation.NonNull" />

@@ -30,7 +30,7 @@
             android:layout_marginStart="16dp"
             android:layout_toEndOf="@+id/progress_mart_logo_report_page"
             android:fontFamily="@font/patua_one"
-            android:text="PROGRESS MART"
+            android:text="@string/app_name"
             android:textColor="@color/primary_variant_second"
             android:textSize="18sp" />
 
@@ -82,7 +82,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="@dimen/_5sdp"
                             android:src="@drawable/sales_order"
-                            android:tint="@color/dark_yellow"/>
+                            app:tint="@color/dark_yellow"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -120,7 +120,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="@dimen/_5sdp"
                             android:src="@drawable/delivery_c"
-                            android:tint="@color/dark_yellow"/>
+                            app:tint="@color/dark_yellow"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="@dimen/_5sdp"
                             android:src="@drawable/delivery_pending_icon"
-                            android:tint="@color/dark_yellow"/>
+                            app:tint="@color/dark_yellow"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -206,7 +206,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="@dimen/_5sdp"
                             android:src="@drawable/top_n"
-                            android:tint="@color/dark_yellow"/>
+                            app:tint="@color/dark_yellow"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -254,7 +254,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="@dimen/_5sdp"
                             android:src="@drawable/stock"
-                            android:tint="@color/dark_yellow"/>
+                            app:tint="@color/dark_yellow"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -292,7 +292,7 @@
                             android:layout_gravity="center"
                             android:layout_margin="@dimen/_5sdp"
                             android:src="@drawable/reorder"
-                            android:tint="@color/dark_yellow"/>
+                            app:tint="@color/dark_yellow"/>
 
                         <TextView
                             android:layout_width="wrap_content"
